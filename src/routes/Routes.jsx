@@ -3,6 +3,8 @@ import RootLayout from "../Layouts/RootLayout";
 import Home from "../components/Home/Home";
 import AllProducts from "../components/AllProducts/AllProducts";
 import Register from "../components/Register/Register";
+import MyProducts from "../components/MyProducts/MyProducts";
+import MyBids from "../components/MyBids/MyBids";
 
 export const router = createBrowserRouter([
   {
@@ -18,10 +20,17 @@ export const router = createBrowserRouter([
         Component: AllProducts,
       },
       {
-        path: 'register',
-        Component: Register
-      }
-      
+        path: "register",
+        Component: Register,
+      },
+      {
+        path: "myProducts",
+        element: <MyProducts></MyProducts>,
+      },
+      {
+        path: "myBids",
+        element: <MyBids></MyBids>,
+      },
     ],
   },
 ]);
