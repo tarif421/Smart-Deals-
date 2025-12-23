@@ -1,14 +1,14 @@
-import React from 'react';
-import { Outlet } from 'react-router';
-import Navbar from '../components/Navbar/Navbar';
+import React from "react";
+import { Outlet } from "react-router";
+import Navbar from "../components/Navbar/Navbar";
 
 const RootLayout = () => {
-    return (
-        <div>
-            <Navbar></Navbar>
-            <Outlet></Outlet>
-        </div>
-    );
+  return (
+    <div className="max-w-7xl mx-auto">
+      <Navbar></Navbar>
+      <Outlet></Outlet>
+    </div>
+  );
 };
 
 export default RootLayout;
