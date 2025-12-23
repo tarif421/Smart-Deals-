@@ -6,7 +6,7 @@ const ProductDetails = () => {
   console.log(product);
   return (
     <div>
-      <h2>I am details</h2>
+      <h2></h2>
     </div>
   );
 };
