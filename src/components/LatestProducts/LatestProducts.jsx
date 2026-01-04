@@ -5,7 +5,7 @@ const LatestProducts = ({ latestProductsPromise }) => {
   const products = use(latestProductsPromise);
   // console.log(products);
   return (
-    <div >
+    <div>
       <h2 className="text-5xl text-center">
         Recent <span className="text-primary">Products</span>
       </h2>

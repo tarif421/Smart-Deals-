@@ -37,8 +37,15 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      setLoading(false);
-    });
+      if (currentUser) {
+        const loggedUser = {emil: currentUser.email}
+        fetch("http://localhost:3000/getToken", {})
+        .then(resizeBy.json())
+        .then(data => {
+          console.log('after getting token', data)
+        })
+      setLoading(false)
+    };
 
     return () => {
       unsubscribe();

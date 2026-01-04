@@ -14,13 +14,17 @@ const ProductDetails = () => {
   const bidModalRef = useRef(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/products/bids/${Product}`)
+    fetch(`http://localhost:3000/products/bids/${Product}`, {
+      headers: {
+        authorization: `Bearer ${user.accessToken}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log("bids for the products", data);
         setBids(data);
       });
-  }, [Product]);
+  }, [Product, user]);
 
   const handleBidModalOpen = () => {
     bidModalRef.current.showModal();
@@ -65,7 +69,7 @@ const ProductDetails = () => {
           // add the new bid to the state
           newBid._id = data.insertedId;
           const newBids = [...bids, newBid];
-          newBids.sort((a, b) => (a.bid_price - b.bid_price));
+          newBids.sort((a, b) => a.bid_price - b.bid_price);
           setBids(newBids);
         }
       });
